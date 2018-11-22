@@ -26,22 +26,22 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.input_password);
         email_address = (EditText) findViewById(R.id.input_email);
         login = (Button) findViewById(R.id.btn_login);
-        login.setOnContextClickListener();
-    }
-    public void login(){
-        if(email_address.getText().toString().equalsIgnoreCase("admin")){
-            if(password.getText().toString().equalsIgnoreCase("123")){
-                Intent  intent = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(intent);
-                Toast.makeText(getApplicationContext(),"Login Sucessful",Toast.LENGTH_LONG);
+        login.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                if(email_address.getText().toString().equalsIgnoreCase("admin") &&
+                        password.getText().toString().equalsIgnoreCase("123")){
+                        Intent  intent = new Intent(getApplicationContext(),DashboardActivity.class);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(),"Login Sucessful",Toast.LENGTH_LONG);
+                    }
+                else{
+                    Toast.makeText(getApplicationContext(),"Invalid Credentials",Toast.LENGTH_LONG);
 
-            }
+                }
+                }
+            });
+
         }
-        else{
-            Toast.makeText(getApplicationContext(),"Invalid Password",Toast.LENGTH_LONG);
-
-        }
 
     }
-
-}
