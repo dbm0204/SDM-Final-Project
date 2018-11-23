@@ -33,10 +33,10 @@ public class LoginActivity extends AppCompatActivity {
                         password.getText().toString().equalsIgnoreCase("123")){
                         Intent  intent = new Intent(getApplicationContext(),DashboardActivity.class);
                         startActivity(intent);
-                        Toast.makeText(getApplicationContext(),"Login Sucessful",Toast.LENGTH_LONG);
+                        Toast.makeText(getApplicationContext(),"Login Sucessful",Toast.LENGTH_LONG).show();
                     }
                 else{
-                    Toast.makeText(getApplicationContext(),"Invalid Credentials",Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(),"Invalid Credentials",Toast.LENGTH_LONG).show();
 
                 }
                 }
